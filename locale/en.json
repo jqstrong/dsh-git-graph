@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Git Graph",
+    "description": "A session view that shows the session working directory's Git branches, commit graph and commit details, IDEA style."
+  }
+}

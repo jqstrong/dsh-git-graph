@@ -1,0 +1,54 @@
+{
+  "name": "@local/dsh-git-graph",
+  "version": "1.1.1",
+  "private": true,
+  "type": "module",
+  "description": "会话视图（IDEA 风格 Git 工具窗）：当前会话工作目录的分支/标签树、提交 DAG 树图、提交详情与 diff；多仓库工作目录自动递归探测并支持切换仓库。",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jqstrong/dsh-git-graph.git"
+  },
+  "homepage": "https://github.com/jqstrong/dsh-git-graph#readme",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis-plugin",
+    "git-graph",
+    "desktop-plugin"
+  ],
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./icon.svg": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "host/",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node check.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
